@@ -1,0 +1,11 @@
+body {
+	width: 100%;
+}
+h1{
+	color: #609297;
+	text-align: center;
+}
+.login{
+	width: 90%;
+	margin: auto;
+}

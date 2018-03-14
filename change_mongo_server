@@ -1,0 +1,11 @@
+#!/bin/sh
+##
+## the purpose is to change the mongo server option in app.php based on env VAR MONGODB_SERVER
+## MONGODB_SERVER="12.34.56.78:27017"
+
+if [ a${MONGODB_SERVER} = a ]; then
+    echo "MONGODB_SERVER env var is not set"
+    exit
+fi
+
+find /var/www/html -name "*.local" -type f -exec sh /usr/local/bin/conf_mongodb {} \;

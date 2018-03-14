@@ -1,0 +1,12 @@
+#!/bin/sh
+##
+if [ a$1 = a ]; then
+    exit
+fi
+if [ a$MONGODB_SERVER = a ]; then
+    exit
+fi
+localfilename=$1
+filename=`echo $localfilename | sed s/\.local//`
+cat $localfilename | sed "s/__MONGODB_SERVER__/${MONGODB_SERVER}/g"  > $filename
+   
